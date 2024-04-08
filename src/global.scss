@@ -1,0 +1,25 @@
+@import './lib.scss';
+
+:root {
+    --white: #ffffff
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    
+}
+.body-text {
+    @include setFontFamily($Barlow);
+    font-size: 18px;
+    line-height: 32px;
+    color: $pTextColor;
+}
+.nav-text {
+    @include setFontFamily($Barlow-Condensed);
+    font-size: 16px;
+    letter-spacing: 2.7px;
+    color: $pTextColor;
+}

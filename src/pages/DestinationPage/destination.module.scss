@@ -1,0 +1,69 @@
+@import "src/lib";
+
+main.main {
+	position: absolute;
+	top: 310px;
+	left: 167px;
+	article {
+		display: flex;
+		gap: 157px;
+		margin-left: 64px;
+		section.image {
+			width: 445px;
+			height: 445px;
+			margin-top: 33px;
+		}
+		section.content {
+			width: 445px;
+			height: 472px;
+			nav.destination_nav{
+				width: 286px;
+				height: 34px;
+				margin-bottom: 37px;
+				ul {
+					display: flex;
+					list-style: none;
+					justify-content: space-between;
+                    height: 100%;
+					li {
+						a {
+							text-decoration: none;
+						}
+                        &:has(> a.active) {
+                            border-bottom: 3px solid white;
+                        }
+                        a.active div {
+                            color: $white;
+                        }
+                        &:hover {
+                            border-bottom: 3px solid rgba($color: $white, $alpha: 0.5);
+                        }
+					}
+				}
+			}
+			.name {
+				text-transform: uppercase;
+				margin-bottom: 14px;
+			}
+			p.description {
+				margin-bottom: 54px;
+			}
+			hr {
+				width: 444px;
+				height: 1px;
+				border-color: $hrBorderColor;
+				margin-bottom: 28px;
+			}
+			.infor {
+				display: flex;
+				gap: 79px;
+				.type {
+					display: flex;
+					flex-direction: column;
+					gap: 12px;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}

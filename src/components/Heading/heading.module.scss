@@ -1,0 +1,36 @@
+@import 'src/lib';
+
+.H1 {
+    @include setFontFamily($Bellefair);
+    font-size: 150px;
+}
+.H2 {
+    @include setFontFamily($Bellefair);
+    font-size: 100px;
+}
+.H3 {
+    @include setFontFamily($Bellefair);
+    font-size: 56px;
+    color: $white;
+}
+.H4 {
+    @include setFontFamily($Bellefair);
+    font-size: 32px;
+}
+.H5 {
+    @include setFontFamily($Barlow-Condensed);
+    font-size: 28px;
+    letter-spacing: 4.72px;
+    color: $pTextColor;
+}
+.SH1 {
+    @include setFontFamily($Bellefair);
+    font-size: 28px;
+    color: $white
+}
+.SH2 {
+    @include setFontFamily($Barlow-Condensed);
+    font-size: 14px;
+    letter-spacing: 2.36px;
+    color: $pTextColor;
+}

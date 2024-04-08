@@ -1,0 +1,55 @@
+@import "src/lib";
+
+.header {
+    position: fixed;
+    top: 40px;
+    left: 55px;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	img {
+		margin-right: 64px;
+	}
+	hr {
+		width: 473px;
+        border-color: $hrBorderColor;
+        opacity: 25%;
+	}
+	.navigation {
+		min-width: 830px;
+		height: 96px;
+		padding: 39px 160px 0px 122px;
+		background-color: rgba(255, 255, 255, 0.04);
+        -webkit-backdrop-filter: blur(61px);
+		backdrop-filter: blur(61px);
+		ul {
+			display: flex;
+			justify-content: space-between;
+			list-style: none;
+            height: 100%;
+            li {
+                a {
+                    opacity: 100%;
+                    text-decoration: none;
+                    color: $white;
+                    span {
+                        font-weight: 700;
+                    }
+                }
+                &:has(> a.active) {
+                    border-bottom: 3px solid white;
+                }
+                &:hover {
+                    border-bottom: 3px solid rgba($color: $white, $alpha: 0.5021);
+                }
+            } 
+		}
+	}
+}
+
+@media screen and (min-width: 1441px) {
+    .header {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

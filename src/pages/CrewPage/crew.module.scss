@@ -1,0 +1,74 @@
+@import "src/lib";
+
+main.main {
+    position: absolute;
+	top: 198px;
+	left: 167px;
+    display: flex;
+    justify-content: space-between;
+    section.image {
+        display: flex;
+        justify-content: start;
+        width: 615px;
+        height: 700px;
+        img {
+            max-width: 100%;
+            // height: auto;
+        }
+    }
+    section.left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 614px;
+        padding-bottom: 94px;
+        .content {
+            width: 100%;
+            height: 100%;
+            padding-top: 202px;
+            .role {
+                text-transform: uppercase;
+                margin-bottom: 15px;
+                opacity: 52.42%;
+            }
+            .name {
+                text-transform: uppercase;
+                margin-bottom: 27px;
+            }
+            .bio {
+                width: 444px;
+            }
+        }
+        ul.select {
+            display: flex;
+            gap: 50px;
+            list-style: none;
+            li {
+                a {
+                    button.circle {
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 50%;
+                        border-color: #979797;
+                        background-color: $white;
+                        opacity: 17.44%;
+                    }
+                }
+                &:hover {
+                    a {
+                        button.circle {
+                            background-color: $white;
+                            opacity: 50%;
+                        }
+                    }
+                }
+                a.active {
+                    button.circle {
+                        background-color: $white;
+                        opacity: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

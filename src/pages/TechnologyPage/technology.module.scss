@@ -1,0 +1,49 @@
+@use 'src/lib' as global;
+
+main.container {
+    position: absolute;
+	top: 272px;
+	left: 165px;
+    display: flex;
+    align-items: center;
+    nav.select {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        a {
+            text-decoration: none;
+            .number {
+                letter-spacing: 2px;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background-color: transparent;
+                color: global.$white;
+                border: 1px solid rgba($color: global.$white, $alpha: 0.25);
+                text-align: center;
+                line-height: 80px;
+            }
+            &:hover {
+                .number {
+                    border: 1px solid rgba($color: global.$white, $alpha: 1);
+                }
+            }
+            &.active .number {
+                background-color: global.$white;
+                color: #0C0F19;
+            }
+        }
+    }
+    section.content {
+        margin-left: 80px;
+        margin-right: 130px;
+        color: #d0d6f9;
+        .name {
+            text-transform: uppercase;
+            margin: 11px auto 17px auto;
+        }
+        .description {
+            max-width: 444px;
+        }
+    }
+}
