@@ -51,7 +51,10 @@ function Technology({techData}) {
                 </div>
             </section>
             <section className={styles.image}>
-                <img src={'/src' + techData.images.portrait} alt="" />
+                <img 
+                    src={techData.images.portrait} 
+                    alt="" 
+                />
             </section>
         </main>
     )

@@ -1,4 +1,4 @@
-import { Navigate, createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter, createHashRouter } from "react-router-dom";
 import Home from "./pages/HomePage/Home";
 import Destination from "./pages/DestinationPage/Destination";
 import Crew from "./pages/CrewPage/Crew";
@@ -48,7 +48,8 @@ const technologyChildren = ['launch-vehicle', 'spaceport', 'space-capsule'].map(
     }
 })
 
-const router = createBrowserRouter([
+// const router = createBrowserRouter([
+const router = createHashRouter([
 	{
 		path: "/",
 		element: (<Home />),

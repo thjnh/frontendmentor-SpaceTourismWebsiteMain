@@ -4,7 +4,7 @@ import styles from "./defaultLayout.module.scss";
 import { Outlet } from "react-router-dom";
 
 const DefaultLayout = ({backgroundImg, children, slogan}) => {
-    var imgURL = `/src/assets/${backgroundImg||'home'}/background-${backgroundImg||'home'}-desktop.jpg`;
+    var imgURL = `./assets/${backgroundImg||'home'}/background-${backgroundImg||'home'}-desktop.jpg`;
 	return (
 		<div 
             style={{backgroundImage: `url(${imgURL})`}} 

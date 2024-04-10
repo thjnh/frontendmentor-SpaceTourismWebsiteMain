@@ -36,7 +36,7 @@ function Crew({ crewData }) {
 			</section>
 			<section className={styles.image}>
 				<img
-					src={"/src" + crewData.images.png}
+					src={crewData.images.png}
 					alt="image"
 				/>
 			</section>

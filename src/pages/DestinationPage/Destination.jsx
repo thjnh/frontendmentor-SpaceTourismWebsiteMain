@@ -2,14 +2,14 @@ import { NavLink } from "react-router-dom";
 import styles from "./destination.module.scss";
 import { Heading, SubHeading } from "../../components/Heading/Heading";
 
-const Destination = ({ destinaData }) => {
+const Destination = ({ destinaData }) => { 
 	// console.log("src" + destinaData.images.png)
 	return (
 		<main className={styles.main}>
 			<article>
 				<section className={styles.image}>
 					<img
-						src={"/src" + destinaData.images.png}
+						src={destinaData.images.png}
 						alt="error"
 					/>
 				</section>

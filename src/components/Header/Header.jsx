@@ -23,7 +23,7 @@ function Header() {
 	return (
 		<header className={styles.header}>
 			<img
-				src="/src/assets/shared/logo.svg"
+				src="./assets/shared/logo.svg"
 				alt=""
 			/>
 			<hr/>
