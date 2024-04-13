@@ -23,3 +23,14 @@ body {
     letter-spacing: 2.7px;
     color: $pTextColor;
 }
+
+@media screen and (max-width: 768px) {
+    .nav-text {
+        font-size: 14px;
+        letter-spacing: 2.36px;
+    }
+    .body-text {
+        font-size: 16px;
+        line-height: 28px;
+    }
+}

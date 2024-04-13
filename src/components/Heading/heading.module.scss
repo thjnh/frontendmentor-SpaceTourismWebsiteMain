@@ -34,3 +34,17 @@
     letter-spacing: 2.36px;
     color: $pTextColor;
 }
+
+@media screen and (max-width: 768px) {
+    .H5 {
+        font-size: 20px;
+        letter-spacing: 3.38px;
+    }
+    .H4 {
+        font-size: 24px;
+    }
+    .H3 {
+        font-size: 40px;
+    }
+
+}

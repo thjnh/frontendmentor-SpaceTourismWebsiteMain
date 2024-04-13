@@ -6,6 +6,7 @@
 	background-size: cover;
     color: $white;
     position: relative;
+    transform: rotate(0);
     .slogan {
         position: absolute;
         top: 212px;
@@ -15,6 +16,15 @@
             font-weight: 600;
             margin-right: 28px;
             opacity: 25%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {        
+        .slogan {
+            top: 136px;
+            left: 76.5px;
         }
     }
 }

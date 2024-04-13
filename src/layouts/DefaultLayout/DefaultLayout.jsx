@@ -1,13 +1,24 @@
+import { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import { Heading } from "../../components/Heading/Heading";
 import styles from "./defaultLayout.module.scss";
 import { Outlet } from "react-router-dom";
 
 const DefaultLayout = ({backgroundImg, children, slogan}) => {
-    var imgURL = `./assets/${backgroundImg||'home'}/background-${backgroundImg||'home'}-desktop.jpg`;
+    const [width, setWidth] = useState(window.innerWidth) 
+    useEffect(() => {
+        window.onresize = () => {
+            setWidth(window.innerWidth)
+        }
+    }, [])
+    const responsiveDevice = width<= 768 ? 'tablet' : 'desktop'
+    var imgURL = `./assets/${backgroundImg||'home'}/background-${backgroundImg||'home'}-${responsiveDevice}.jpg`;
 	return (
 		<div 
-            style={{backgroundImage: `url(${imgURL})`}} 
+            style={{
+                backgroundImage: `url(${imgURL})`
+
+            }} 
             className={styles.container}
         >
             <Header />

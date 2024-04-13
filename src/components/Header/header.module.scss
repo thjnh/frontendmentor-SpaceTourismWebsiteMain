@@ -3,23 +3,24 @@
 .header {
     position: fixed;
     top: 40px;
-    left: 55px;
+    left: 0px;
+    padding-left: 55px;
 	display: flex;
 	justify-content: end;
 	align-items: center;
+    width: 100%;
 	img {
 		margin-right: 64px;
 	}
 	hr {
 		width: 473px;
-        border-color: $hrBorderColor;
-        opacity: 25%;
+        border-color: rgba($color: #ffffff, $alpha: 0.2515);
 	}
 	.navigation {
 		min-width: 830px;
 		height: 96px;
 		padding: 39px 160px 0px 122px;
-		background-color: rgba(255, 255, 255, 0.04);
+		background-color:rgba($color: #ffffff, $alpha: 0.04);
         -webkit-backdrop-filter: blur(61px);
 		backdrop-filter: blur(61px);
 		ul {
@@ -51,5 +52,31 @@
     .header {
         width: 100%;
         justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .header {
+        top: 0px;
+        padding-left: 39px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        hr {
+            display: none;
+        }
+        .navigation {
+            padding: 39px 46px 0px 48px;
+            min-width: 450px;
+            ul {
+                li {
+                    a {
+                        span {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

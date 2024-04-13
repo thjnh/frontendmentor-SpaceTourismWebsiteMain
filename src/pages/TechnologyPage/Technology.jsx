@@ -1,8 +1,15 @@
 import { NavLink } from "react-router-dom";
 import styles from "./technology.module.scss";
 import { Heading } from "../../components/Heading/Heading";
+import { useEffect, useState } from "react";
 
 function Technology({techData}) {
+    const [width, setWidth] = useState(window.innerWidth) 
+    useEffect(() => {
+        window.onresize = () => {
+            setWidth(window.innerWidth)
+        }
+    }, [])
     const linkData = [
         {
             id: '1',
@@ -52,7 +59,7 @@ function Technology({techData}) {
             </section>
             <section className={styles.image}>
                 <img 
-                    src={techData.images.portrait} 
+                    src={width > 768 ? techData.images.portrait : techData.images.landscape} 
                     alt="" 
                 />
             </section>

@@ -1,9 +1,7 @@
 @use 'src/lib' as global;
 
 main.container {
-    position: absolute;
-	top: 272px;
-	left: 165px;
+    padding: 272px 0 0 165px;
     display: flex;
     align-items: center;
     nav.select {
@@ -44,6 +42,48 @@ main.container {
         }
         .description {
             max-width: 444px;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    main.container {
+        flex-direction: column;
+        align-items: center;
+        padding: 220px 0 0 0;
+        nav.select {
+            flex-direction: row;
+            margin-top: 56px;
+            margin-bottom: 44px;
+            order: 2;
+            a {
+                .number {
+                    width: 60px;
+                    height: 60px;
+                    line-height: 60px;
+                }
+            }
+        }
+        section.content {
+            width: 458px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin: 0;
+            order: 3;
+            .description {
+                max-width: 458px;
+                text-align: center;
+            }
+            .name {
+                margin: 0;
+            }
+        }
+        section.image {
+            order: 1;
+            height: 310px;
+            width: 100%;
         }
     }
 }
