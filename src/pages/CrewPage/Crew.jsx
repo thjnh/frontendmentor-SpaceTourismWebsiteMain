@@ -18,17 +18,16 @@ function Crew({ crewData }) {
                             key={index}
                         >
                             <NavLink
-							to={`/crew/${item}`}
-							className={({ isActive, isPending }) =>
-								isPending
-									? styles.pending
-									: isActive
-                                        ? styles.active
-                                        : ""
-							}
-						>
-							<button className={styles.circle}></button>
-						</NavLink>
+                                to={`/crew/${item}`}
+                                className={({ isActive, isPending }) =>
+                                    isPending
+                                        ? styles.pending
+                                        : isActive
+                                            ? styles.active
+                                            : ""
+                                }
+                            >
+                            </NavLink>      
                         </li>
                     ))
                 }

@@ -25,7 +25,7 @@ function Technology({techData}) {
         },
     ]
 	return (
-        <main className={styles.container}>
+        <main className={styles.main}>
             <nav className={styles.select}>
             {
                 linkData.map((item, index) => (

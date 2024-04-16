@@ -11,13 +11,12 @@ const DefaultLayout = ({backgroundImg, children, slogan}) => {
             setWidth(window.innerWidth)
         }
     }, [])
-    const responsiveDevice = width<= 768 ? 'tablet' : 'desktop'
+    const responsiveDevice = width <= 375 ? 'mobile': width <= 768 ? 'tablet' : 'desktop'
     var imgURL = `./assets/${backgroundImg||'home'}/background-${backgroundImg||'home'}-${responsiveDevice}.jpg`;
 	return (
 		<div 
             style={{
                 backgroundImage: `url(${imgURL})`
-
             }} 
             className={styles.container}
         >

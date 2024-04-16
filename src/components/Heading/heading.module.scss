@@ -35,7 +35,7 @@
     color: $pTextColor;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 376px) and (max-width: 768px) {
     .H5 {
         font-size: 20px;
         letter-spacing: 3.38px;
@@ -46,5 +46,26 @@
     .H3 {
         font-size: 40px;
     }
+}
 
+@media screen and (max-width: 376px) {
+    .H1 {
+        font-size: 80px;
+        line-height: 100px;
+    }
+    .H2 {
+        font-size: 56px;
+    }
+    .H3 {
+        font-size: 24px;
+    }
+    .H4 {
+        font-size: 20px;
+        
+    }
+    .H5 {
+        font-size: 16px;
+        letter-spacing: 2.7px;
+    }
+    
 }

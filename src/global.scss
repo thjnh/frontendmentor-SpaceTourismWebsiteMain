@@ -23,6 +23,12 @@ body {
     letter-spacing: 2.7px;
     color: $pTextColor;
 }
+.landing-page-main-button {
+    @include setFontFamily($Bellefair);
+    font-size: 32px;
+    letter-spacing: 2px;
+
+}
 
 @media screen and (max-width: 768px) {
     .nav-text {
@@ -32,5 +38,16 @@ body {
     .body-text {
         font-size: 16px;
         line-height: 28px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .body-text {
+        font-size: 15px;
+        line-height: 25px;
+    }
+    .landing-page-main-button {
+        font-size: 20px;
+        letter-spacing: 1.25px;
     }
 }

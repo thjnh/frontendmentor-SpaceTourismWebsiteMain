@@ -19,12 +19,12 @@ const Home = () => {
                     </p>
                 </article>
                 <div className={styles.cover}>
-                    <button className={styles.child}  >
-                        <Heading 
+                    <button className={styles.child + ' landing-page-main-button'}  >
+                        {/* <Heading 
                             h='4'
-                        >
+                        > */}
                             EXPLORE
-                        </Heading>
+                        {/* </Heading> */}
                     </button>
                 </div>
             </main>
