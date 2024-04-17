@@ -1,7 +1,9 @@
+import { useNavigate } from 'react-router-dom'
 import { Heading } from '../../components/Heading/Heading'
 import DefaultLayout from '../../layouts/DefaultLayout/DefaultLayout'
 import styles from './home.module.scss'
 const Home = () => {
+    const navigate = useNavigate()
     return (
         <DefaultLayout>
             <main className={styles.main}>
@@ -19,12 +21,11 @@ const Home = () => {
                     </p>
                 </article>
                 <div className={styles.cover}>
-                    <button className={styles.child + ' landing-page-main-button'}  >
-                        {/* <Heading 
-                            h='4'
-                        > */}
-                            EXPLORE
-                        {/* </Heading> */}
+                    <button 
+                        className={styles.child + ' landing-page-main-button'}  
+                        onClick={() => navigate('/destination')}    
+                    >
+                        EXPLORE
                     </button>
                 </div>
             </main>

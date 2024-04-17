@@ -84,6 +84,9 @@ main.main {
             order: 1;
             height: 310px;
             width: 100%;
+            img {
+                width: 100%;
+            }
         }
     }
 }
@@ -93,7 +96,7 @@ main.main {
         margin: 139px 0 0 0;
         padding: 0;
         section.image {
-            width: 100%;
+            width: 100vw;
             height: 170px;
             order: 1;
             padding: 0;

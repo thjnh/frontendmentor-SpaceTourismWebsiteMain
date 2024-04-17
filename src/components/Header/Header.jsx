@@ -25,27 +25,29 @@ function Header() {
 	const [isDisplay, setIsDisplay] = useState(false);
 	return (
 		<header className={styles.header}>
-			<img 
-                className={styles.logo}
-				src="./assets/shared/logo.svg"
-				alt=""
-			/>
+			<NavLink to="/">
+				<img
+					className={styles.logo}
+					src="./assets/shared/logo.svg"
+					alt=""
+				/>
+			</NavLink>
 			{!isDisplay && (
-				<div
-					className={styles.hamburger}
-					onClick={() => {
-						setIsDisplay(true);
-					}}
-				>
-					<img
-						src="./assets/shared/icon-hamburger.svg"
-						alt=""
-					/>
-				</div>
-			)}
-			{isDisplay && (
-				<HamburgerMenu handleClick={() => setIsDisplay(false)} />
-			)}
+                <div
+                    className={styles.hamburger}
+                    onClick={() => {
+                        setIsDisplay(true);
+                    }}
+                >
+                    <img
+                        src="./assets/shared/icon-hamburger.svg"
+                        alt=""
+                    />
+                </div>
+            )}
+            {isDisplay && (    
+                <HamburgerMenu className={styles.try} handleClick={() => setIsDisplay(false)} />
+            )}
 			<hr />
 			<nav className={styles.navigation + " nav-text"}>
 				<ul>

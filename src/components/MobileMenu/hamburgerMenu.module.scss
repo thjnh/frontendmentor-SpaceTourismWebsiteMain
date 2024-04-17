@@ -1,6 +1,35 @@
 @import "src/lib";
 
-main.container {
+@keyframes Open {
+    from{
+        opacity: 0;
+        transform: translateX(254px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes Close {
+    from{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    to{
+        opacity: 0;
+        transform: translateX(254px);
+    }
+}
+
+.open {
+    animation: Open 600ms ease-in;
+}
+.close {
+    animation: Close 600ms ease-in;
+    opacity: 0;
+    transform: translateX(254px);
+}
+.container {
     position: fixed;
     top: 0;
     right: 0;
@@ -12,6 +41,7 @@ main.container {
     display: flex;
     flex-direction: column;
     gap: 65px;
+    // animation: Mounted 1s ease-in;
     .icon_close {
         padding: 34px 26px 0 0;
         img {

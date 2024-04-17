@@ -29,7 +29,9 @@ main.main {
 		border-radius: 50%;
 		margin: 108px 0 0 386px;
 		letter-spacing: 2px;
+        transition: background-color 0.5s;
 		button.child {
+            cursor: pointer;
 			display: flex;
 			justify-content: center;
 			align-items: center;

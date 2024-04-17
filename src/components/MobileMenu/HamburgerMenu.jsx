@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styles from "./hamburgerMenu.module.scss";
+import { useState } from "react";
+
 const pages = [
 	{
 		name: "00 HOME",
@@ -18,38 +20,47 @@ const pages = [
 		addr: "/technology",
 	},
 ];
-const HamburgerMenu = ({ handleClick }) => {
+
+const HamburgerMenu = ({ handleClick}) => {
+    const [isMounted, setIsMounted] = useState(true)
 	return (
-		<main className={styles.container}>
+		<main 
+            className={`${styles.container} ${isMounted ? styles.open : styles.close}`} 
+        >
 			<div className={styles.icon_close}>
 				<img
-                    onClick={handleClick}
+					onClick={() => {
+                        setIsMounted(false)
+                        setTimeout(() => {
+                            handleClick()
+                        }, 600);
+                    }}
 					src="./assets/shared/icon-close.svg"
 					alt=""
 				/>
 			</div>
 			<nav className={styles.navigation + " nav-text"}>
-                <ul>
-                    {pages.map((item, index) => (
-                        <li key={index}>
-                            <NavLink
-                                to={item.addr}
-                                className={({ isActive, isPending }) =>
-                                    isPending
-                                        ? styles.pending
-                                        : isActive
-                                        ? styles.active
-                                        : ""
-                                }
-                            >
-                                <span>{item.name.substring(0, 2)}</span>{" "}
-                                {item.name.substring(3)}
-                            </NavLink>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
+				<ul>
+					{pages.map((item, index) => (
+						<li key={index}>
+							<NavLink
+								to={item.addr}
+								className={({ isActive, isPending }) =>
+									isPending
+										? styles.pending
+										: isActive
+										? styles.active
+										: ""
+								}
+							>
+								<span>{item.name.substring(0, 2)}</span>{" "}
+								{item.name.substring(3)}
+							</NavLink>
+						</li>
+					))}
+				</ul>
+			</nav>
 		</main>
-	);
-};
+    )
+}
 export default HamburgerMenu;
