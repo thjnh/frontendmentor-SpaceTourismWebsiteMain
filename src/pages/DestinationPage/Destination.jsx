@@ -1,11 +1,14 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import styles from "./destination.module.scss";
 import { Heading, SubHeading } from "../../components/Heading/Heading";
+import { useState } from "react";
 
-const Destination = ({ destinaData }) => { 
+const Destination = ({ destinaData}) => { 
+    const [isMounted, setIsMounted] = useState(true)
+    const navigate = useNavigate()
 	return (
 		<main className={styles.main}>
-			<article>
+			<article className={`${isMounted?styles.mounted:styles.unmounted}`}>
 				<section className={styles.image}>
 					<img
 						src={destinaData.images.png}
@@ -20,7 +23,21 @@ const Destination = ({ destinaData }) => {
                                 <li
                                     key={index}
                                 >
-                                    <NavLink 
+                                    <div
+                                        className={`${destinaData.name.toLowerCase()===item?styles.active:''}`}
+                                        onClick={() => {
+                                            setIsMounted(false)
+                                            setTimeout(() => {
+                                                navigate(`/destination/${item}`)
+                                                setIsMounted(true)
+                                            }, 600);
+                                        }}
+                                    >
+                                        <div className="nav-text">
+                                            {item.toUpperCase()}
+                                        </div>
+                                    </div>
+                                    {/* <NavLink 
                                         to={`/destination/${item}`}
                                         className={({isActive, isPending}) => 
                                             isPending ? styles.pending : isActive ? styles.active : ""
@@ -29,7 +46,7 @@ const Destination = ({ destinaData }) => {
                                         <div className="nav-text">
                                             {item.toUpperCase()}
                                         </div>
-                                    </NavLink>
+                                    </NavLink> */}
                                 </li>
                             ))
                         }
@@ -62,3 +79,4 @@ const Destination = ({ destinaData }) => {
 };
 
 export default Destination;
+

@@ -27,39 +27,50 @@ const HamburgerMenu = ({ handleClick}) => {
 		<main 
             className={`${styles.container} ${isMounted ? styles.open : styles.close}`} 
         >
-			<div className={styles.icon_close}>
-				<img
-					onClick={() => {
-                        setIsMounted(false)
-                        setTimeout(() => {
-                            handleClick()
-                        }, 600);
-                    }}
-					src="./assets/shared/icon-close.svg"
-					alt=""
-				/>
-			</div>
-			<nav className={styles.navigation + " nav-text"}>
-				<ul>
-					{pages.map((item, index) => (
-						<li key={index}>
-							<NavLink
-								to={item.addr}
-								className={({ isActive, isPending }) =>
-									isPending
-										? styles.pending
-										: isActive
-										? styles.active
-										: ""
-								}
-							>
-								<span>{item.name.substring(0, 2)}</span>{" "}
-								{item.name.substring(3)}
-							</NavLink>
-						</li>
-					))}
-				</ul>
-			</nav>
+            <div 
+                className={styles.left_hidden}
+                onClick={() => {
+                    setIsMounted(false)
+                    setTimeout(() => {
+                        handleClick()
+                    }, 600);
+                }}
+            ></div>
+            <div className={styles.right}>
+                <div className={styles.icon_close}>
+                    <img
+                        onClick={() => {
+                            setIsMounted(false)
+                            setTimeout(() => {
+                                handleClick()
+                            }, 600);
+                        }}
+                        src="./assets/shared/icon-close.svg"
+                        alt=""
+                    />
+                </div>
+                <nav className={styles.navigation + " nav-text"}>
+                    <ul>
+                        {pages.map((item, index) => (
+                            <li key={index}>
+                                <NavLink
+                                    to={item.addr}
+                                    className={({ isActive, isPending }) =>
+                                        isPending
+                                            ? styles.pending
+                                            : isActive
+                                            ? styles.active
+                                            : ""
+                                    }
+                                >
+                                    <span>{item.name.substring(0, 2)}</span>{" "}
+                                    {item.name.substring(3)}
+                                </NavLink>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+            </div>
 		</main>
     )
 }

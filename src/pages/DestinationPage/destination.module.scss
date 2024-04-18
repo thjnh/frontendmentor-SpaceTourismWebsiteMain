@@ -1,4 +1,32 @@
 @import "src/lib";
+@keyframes Open {
+    from{
+        opacity: 0;
+        transform: translateX(254px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes Close {
+    from{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    to{
+        opacity: 0;
+        transform: translateX(-254px);
+    }
+}
+.mounted {
+    animation: Open 600ms ease-in;
+}
+.unmounted {
+    animation: Close 600ms ease-in;
+    opacity: 0;
+    transform: translateX(254px);
+}
 
 main.main {
     padding: 310px 0 0 167px;
@@ -28,18 +56,31 @@ main.main {
 					justify-content: space-between;
                     height: 100%;
 					li {
-						a {
+						div {
+                            cursor: pointer;
 							text-decoration: none;
 						}
-                        &:has(> a.active) {
+                        &:has(> div.active) {
                             border-bottom: 3px solid white;
                         }
-                        a.active div {
+                        div.active div {
                             color: $white;
                         }
                         &:hover {
                             border-bottom: 3px solid rgba($color: $white, $alpha: 0.5);
                         }
+						// a {
+						// 	text-decoration: none;
+						// }
+                        // &:has(> a.active) {
+                        //     border-bottom: 3px solid white;
+                        // }
+                        // a.active div {
+                        //     color: $white;
+                        // }
+                        // &:hover {
+                        //     border-bottom: 3px solid rgba($color: $white, $alpha: 0.5);
+                        // }
 					}
 				}
 			}
@@ -83,6 +124,7 @@ main.main {
             width: 573px;
             gap: 53px;
             section.image {
+                margin-top: 0;
                 width: 300px;
                 height: 300px;
             }
